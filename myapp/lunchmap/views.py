@@ -17,7 +17,7 @@ class CreateView(LoginRequiredMixin, generic.edit.CreateView):
     fields = ['name', 'address', 'category'] #'__all__'
 
     def form_valid(self, form):
-        form.intance.author = self.request.user
+        form.instance.author = self.request.user
         return super(CreateView, self).form_valid(form)
 
 class UpdateView(LoginRequiredMixin, generic.edit.UpdateView):
